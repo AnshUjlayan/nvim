@@ -67,6 +67,9 @@ map("n", "<leader>pp", utils.paste_clipboard, { desc = "Utility Paste clipboard 
 map("n", "<leader>ut", "<cmd>UndotreeToggle<CR>", { desc = "Utility Undo tree toggle" })
 
 -- rename
+map("n", "<leader>hh", function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { 0 }, { 0 })
+end, { desc = "LSP Toggle Inlay Hints" })
 map("n", "[d", "[d", { desc = "LSP previous diagnostic" })
 map("n", "]d", "]d", { desc = "LSP next diagnostic" })
 map("n", "<C-w>d", "<C-w>d", { desc = "LSP show diagnostics under cursor" })
